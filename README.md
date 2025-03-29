@@ -7,12 +7,8 @@
 4. [Ranking](#ranking)
 5. [Compilation and Execution](#compilation-and-execution)
 
----
-
 ## Introduction
 The project implements a multiplayer Blackjack card game, where the server manages the gameplay and clients act as players. The server handles multiple simultaneous connections and allows individual games. It runs as a background daemon and broadcasts its address using multicast. Client names are tracked, and the server provides a ranking of wins, draws, and losses.
-
----
 
 ## Program Operation
 Every 5 seconds, the server sends its IP address (IPv4 or IPv6) via multicast:
@@ -34,8 +30,6 @@ Welcome, <name>! Choose an option:
 ```
 The game result is recorded in the ranking after completion.
 
----
-
 ## Gameplay
 Rules follow standard Blackjack. Players draw cards until they choose to "stand" or exceed 21 points (bust). The dealer (server) draws cards after the player's turn.
 Possible outcomes:
@@ -43,16 +37,12 @@ Possible outcomes:
 - Loss - Player's score is lower than the dealer's.
 - Draw - Both scores are equal.
 
----
-
 ## Ranking
 The ranking is displayed as:
 ```
 <name> - W: x, D: y, L: z
 ```
 The server remembers results after re-login.
-
----
 
 ## Compilation and Execution
 ### Configure rsyslog daemon:
