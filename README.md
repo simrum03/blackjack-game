@@ -14,6 +14,7 @@ The project implements a multiplayer Blackjack card game, where the server manag
 Every 5 seconds, the server sends its IP address (IPv4 or IPv6) via multicast:
 - IPv4: 239.255.255.250
 - IPv6: ff02::1
+
 The client listens for the server's multicast address and connects via TCP upon receiving it.
 
 Upon connection, the client sees:
